@@ -1,5 +1,6 @@
 package com.microservices.order;
 
+import com.microservices.order.stubs.InventoryClientStub;
 import io.restassured.RestAssured;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
+import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 import org.springframework.context.annotation.Import;
 import org.testcontainers.containers.MySQLContainer;
 
@@ -15,6 +17,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @Import(TestcontainersConfiguration.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureWireMock(port = 0)
 class OrderServiceApplicationTests {
 
     @ServiceConnection
@@ -37,11 +40,14 @@ class OrderServiceApplicationTests {
     void shouldSubmitOrder() {
         String submitOrderJson = """
                 {
-                    "skuCode" : "Iphone 16 pro",
+                    "skuCode" : "iphone_16_pro",
                     "price" : 1000,
                     "quantity" : 1
                 }
                 """;
+
+        InventoryClientStub.stubInventoryCall("iphone_16_pro",1);
+
         var responseBodyString = RestAssured.given()
                 .contentType("application/json")
                 .body(submitOrderJson)
