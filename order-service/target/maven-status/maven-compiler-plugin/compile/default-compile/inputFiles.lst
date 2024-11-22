@@ -1,0 +1,11 @@
+C:\Users\m1lym\IdeaProjects\microservice-order-service\order-service\src\main\java\com\microservices\order\client\InventoryClient.java
+C:\Users\m1lym\IdeaProjects\microservice-order-service\order-service\src\main\java\com\microservices\order\config\OpenApiConfig.java
+C:\Users\m1lym\IdeaProjects\microservice-order-service\order-service\src\main\java\com\microservices\order\config\RestClientConfig.java
+C:\Users\m1lym\IdeaProjects\microservice-order-service\order-service\src\main\java\com\microservices\order\controller\OrderController.java
+C:\Users\m1lym\IdeaProjects\microservice-order-service\order-service\src\main\java\com\microservices\order\dto\OrderRequest.java
+C:\Users\m1lym\IdeaProjects\microservice-order-service\order-service\src\main\java\com\microservices\order\event\OrderPlacedEvent.java
+C:\Users\m1lym\IdeaProjects\microservice-order-service\order-service\src\main\java\com\microservices\order\model\Order.java
+C:\Users\m1lym\IdeaProjects\microservice-order-service\order-service\src\main\java\com\microservices\order\OrderServiceApplication.java
+C:\Users\m1lym\IdeaProjects\microservice-order-service\order-service\src\main\java\com\microservices\order\repository\OrderRepository.java
+C:\Users\m1lym\IdeaProjects\microservice-order-service\order-service\src\main\java\com\microservices\order\service\OrderService.java
+C:\Users\m1lym\IdeaProjects\microservice-order-service\order-service\src\main\java\com\techie\microservices\order\event\OrderPlacedEvent.java
